@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>English:</strong>
+  <%= @ord.english %>
+</p>
+
+<p>
+  <strong>Swedish:</strong>
+  <%= @ord.swedish %>
+</p>
+
+<p>
+  <strong>Shown at:</strong>
+  <%= @ord.shown_at %>
+</p>
+
+<p>
+  <strong>Failure count:</strong>
+  <%= @ord.failure_count %>
+</p>
+
+<p>
+  <strong>Show count:</strong>
+  <%= @ord.show_count %>
+</p>
+
+<%= link_to 'Edit', edit_ord_path(@ord) %> |
+<%= link_to 'Back', ords_path %>

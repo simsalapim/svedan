@@ -1,0 +1,2 @@
+module OrdsHelper
+end

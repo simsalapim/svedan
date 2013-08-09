@@ -1,0 +1,29 @@
+<h1>Listing ords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>English</th>
+      <th>Swedish</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+<%=rand%>
+  <tbody>
+    <% @ords.each do |ord| %>
+      <tr>
+        <td><%= ord.english %></td>
+        <td><%= ord.swedish %></td>
+        <td><%= link_to 'Show', ord %></td>
+        <td><%= link_to 'Edit', edit_ord_path(ord) %></td>
+        <td><%= link_to 'Destroy', ord, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ord', new_ord_path %>
