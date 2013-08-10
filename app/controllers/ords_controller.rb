@@ -28,10 +28,10 @@ class OrdsController < ApplicationController
 
     respond_to do |format|
       if @ord.save
-        format.html { redirect_to @ord, notice: 'Ord was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @ord }
+        format.html { redirect_to @ord, notice: 'Ordet har skapats!' }
+        format.json { render action: 'Visa', status: :created, location: @ord }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'Ny' }
         format.json { render json: @ord.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +42,10 @@ class OrdsController < ApplicationController
   def update
     respond_to do |format|
       if @ord.update(ord_params)
-        format.html { redirect_to @ord, notice: 'Ord was successfully updated.' }
+        format.html { redirect_to @ord, notice: 'Ordet har uppdaterats!.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'Redigera' }
         format.json { render json: @ord.errors, status: :unprocessable_entity }
       end
     end
