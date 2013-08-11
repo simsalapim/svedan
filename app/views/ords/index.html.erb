@@ -1,10 +1,9 @@
-<h1>Här är orden du måste lära dig Daniel!</h1>
 <%= link_to 'Nytt ord', new_ord_path %>
-
+<BR><BR>
 <table>
   <thead>
     <tr>
-      <th>Engelska</th>
+      <th>Engelska &nbsp; &nbsp; &nbsp;</th> 
       <th>Svenska</th>
       <th></th>
       <th></th>
@@ -17,8 +16,6 @@
         <td><%= ord.english %></td>
         <td><%= ord.swedish %></td>
         <td><%= link_to 'Visa', ord %></td>
-        <td><%= link_to 'Redigera', edit_ord_path(ord) %></td>
-        <td><%= link_to 'Radera', ord, method: :delete, data: { confirm: 'Är du säker?' } %></td>
       </tr>
     <% end %>
   </tbody>

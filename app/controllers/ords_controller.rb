@@ -28,8 +28,7 @@ class OrdsController < ApplicationController
 
     respond_to do |format|
       if @ord.save
-        format.html { redirect_to @ord, notice: 'Ordet har skapats!' }
-        format.json { render action: 'Visa', status: :created, location: @ord }
+        format.html { redirect_to ords_url, notice: 'Ordet har skapats!' }
       else
         format.html { render action: 'Ny' }
         format.json { render json: @ord.errors, status: :unprocessable_entity }
