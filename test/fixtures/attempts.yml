@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ord_id: 1
+  successful: false
+
+two:
+  ord_id: 1
+  successful: false

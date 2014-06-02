@@ -11,16 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130809204118) do
+ActiveRecord::Schema.define(version: 20140523060230) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attempts", force: true do |t|
+    t.integer  "ord_id"
+    t.string   "body"
+    t.boolean  "successful"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ords", force: true do |t|
     t.string   "english"
     t.string   "swedish"
-    t.datetime "shown_at"
-    t.integer  "failure_count"
-    t.integer  "show_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "last_shown_at"
   end
 
 end

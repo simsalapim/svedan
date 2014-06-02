@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  english: MyString
-  swedish: MyString
-  shown_at: 2013-08-09 22:41:18
-  failure_count: 1
-  show_count: 1
+hello:
+  english: hello
+  swedish: hej
+  last_shown_at: <%= Time.now %>
 
-two:
-  english: MyString
-  swedish: MyString
-  shown_at: 2013-08-09 22:41:18
-  failure_count: 1
-  show_count: 1
+long_word:
+  english: I love you
+  swedish: Jag älskar dig
+  last_shown_at: <%= Time.now %>

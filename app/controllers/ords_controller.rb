@@ -1,10 +1,14 @@
 class OrdsController < ApplicationController
-  before_action :set_ord, only: [:show, :edit, :update, :destroy]
+  before_action :set_ord, only: [:show, :edit, :update, :destroy, :attempt]
 
   # GET /ords
   # GET /ords.json
   def index
-    @ords = Ord.all
+    @ords = Ord.question_order
+    @ord = Ord.new
+  end
+
+  def quiz
   end
 
   # GET /ords/1
@@ -28,9 +32,9 @@ class OrdsController < ApplicationController
 
     respond_to do |format|
       if @ord.save
-        format.html { redirect_to ords_url, notice: 'Ordet har skapats!' }
+        format.html { render @ord }
       else
-        format.html { render action: 'Ny' }
+        format.html { render action: new }
         format.json { render json: @ord.errors, status: :unprocessable_entity }
       end
     end
@@ -60,6 +64,19 @@ class OrdsController < ApplicationController
     end
   end
 
+  def next_question
+    @ord = Ord.next_question
+    respond_to do |format|
+      format.html { render @ord }
+      format.json { render :json => @ord }
+    end
+  end
+
+  def attempt
+    @attempt = @ord.attempt(params[:answer])
+    render :status => :error unless @attempt.persisted?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ord
@@ -68,6 +85,6 @@ class OrdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ord_params
-      params.require(:ord).permit(:english, :swedish, :shown_at, :failure_count, :show_count)
+      params.require(:ord).permit(:english, :swedish, :answer)
     end
 end

@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", group: :development
 
-gem "pg", group: :production
+gem "pg"
 
 # For heroku
 gem 'rails_12factor', group: :production
@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'unicode'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -31,6 +33,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'font-awesome-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

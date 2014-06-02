@@ -1,0 +1,27 @@
+<script id="attempt-template" type="text/x-handlebars-template">
+  <div class='attempt'>
+    {{english}}
+    <span class='arrow'>&rarr;</span>
+    {{#unless successful}}
+      <del>{{attempt}}</del>
+    {{/unless}}
+    <span class='swedish'>{{swedish}}</span>
+  </div>
+</script>
+
+<h1 class='tagline'>Hur säger man <div id="quiz-question"></div>&nbsp;?</h1>
+<h1 id="measurement" class='tagline'></h1>
+
+<%= form_tag('/quiz', class: "quiz") do |f| %>
+<form role="form">
+  <div class="input-group">
+    <%= text_field_tag 'answer', '', class: "form-control" %>
+      <span class="input-group-btn">
+        <%= submit_tag 'Klar!', class: "btn btn-default submit-attempt", tabindex: "2" %>
+      </span>
+  </div>
+</form>
+<% end %>
+
+<div id="attempts">
+</div>

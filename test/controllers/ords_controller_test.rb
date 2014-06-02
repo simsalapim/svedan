@@ -2,7 +2,7 @@ require 'test_helper'
 
 class OrdsControllerTest < ActionController::TestCase
   setup do
-    @ord = ords(:one)
+    @ord = ords(:hello)
   end
 
   test "should get index" do
@@ -14,14 +14,6 @@ class OrdsControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
-  end
-
-  test "should create ord" do
-    assert_difference('Ord.count') do
-      post :create, ord: { english: @ord.english, failure_count: @ord.failure_count, show_count: @ord.show_count, shown_at: @ord.shown_at, swedish: @ord.swedish }
-    end
-
-    assert_redirected_to ord_path(assigns(:ord))
   end
 
   test "should show ord" do
@@ -45,5 +37,10 @@ class OrdsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to ords_path
+  end
+
+  test "attempt should return an error if something went wrong" do
+    post :attempt, format: :json, id: @ord
+    assert_response :error
   end
 end

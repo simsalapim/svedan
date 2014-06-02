@@ -1,25 +1,13 @@
-<%= form_for(@ord) do |f| %>
-  <% if @ord.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ord.errors.count, "error") %> prohibited this ord from being saved:</h2>
-
-      <ul>
-      <% @ord.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <th>Svenska</th>
-    <%= f.text_field :swedish %>
+<%= form_for(@ord, remote: true) do |f| %>
+<form role="form">
+  <div class="input-group">
+    <%= f.text_field :swedish, class: "form-control", placeholder: "Ord på svenska" %>
+      <span class="input-group-btn">
+        <%= f.submit 'Klar!', class: "btn btn-default", tabindex: "2" %>
+      </span>
   </div>
-  <div class="field">
-    <th>Engelska</th>
-    <%= f.text_field :english %>
+  <div class="form-group">
+    <%= f.text_field :english, class: "form-control", placeholder: "Ord på engelska" %>
   </div>
-  <div class="actions">
-    <%= f.submit 'Klar!'%>
-  </div>
+</form>
 <% end %>

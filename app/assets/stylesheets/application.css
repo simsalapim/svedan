@@ -8,6 +8,147 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require bootstrap.min
+ *= require font-awesome
+ *= require_self
  */
+
+
+body {
+  background-color: #005B99;
+  color: white;
+  font-family: 'Asap', sans-serif;
+  line-height: 18px;
+  font-size: 20px !important;
+}
+
+.tagline {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #ffcc00;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.navbar-inverse {
+  background: none;
+  border: none;
+}
+
+footer {
+  padding-top: 10px;
+  color: #ffcc00;
+}
+
+.form-control {
+  font-size: 20px !important;
+}
+
+input {
+  margin-top: 10px;
+  position: relative;
+}
+
+input.form-control  {
+  border: none;
+  border-radius: 0px;
+  height: 50px;
+}
+
+.form-group {
+  margin-right: 210px;
+}
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+  margin-left: 10px;
+}
+
+.form-group {
+  display: none;
+}
+
+.btn {
+  color: #005B99;
+  height: 50px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 0px;
+  width: 200px;
+  font-weight: bold;
+  font-size: 20px !important;
+}
+
+.ord {
+  position: relative;
+  background: #004C80;
+  margin: 10px 0px;
+  height: 50px;
+  padding: 15px;
+}
+
+.attempt, .ord {
+  position: relative;
+  background: #004C80;
+  margin: 10px 0px;
+  height: 50px;
+  padding: 15px;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.attempt {
+  display: none;
+}
+
+.attempt .swedish, .attempt .arrow, .ord .arrow, .ord .swedish {
+  color: #ffcc00;
+}
+
+del {
+  color: #f44;
+}
+
+
+.question {
+  float: left;
+}
+
+.answer {
+  float: right;
+}
+
+#quiz-question {
+  border-bottom: 4px white dotted;
+  padding-bottom: 4px;
+  display: inline-block;
+  overflow: inherit !important;
+  text-transform:lowercase;
+}
+
+#measurement {
+  opacity: 0;
+  display: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.hover-icons {
+  float: right;
+  color: #0667A8;
+}
+
+.hover-icons a, .hover-icons:hover {
+  color: inherit;
+}
+
+.hover-icons i {
+  padding-left: 10px;
+  float: left;
+  cursor: pointer;
+}

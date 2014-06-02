@@ -1,41 +1,6 @@
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.js"></script>
+<h1 class='tagline'>Vad har du lärt dig idag?</h1>
+<%= render 'form' %>
 
-<script type="text/javascript">
-$(document).ready(function()
-{
- $(".msg_body").hide();
- $(".msg_head").click(function()
- {
- $(this).next(".msg_body").slideToggle(600);
- $(this).hide("msg_body")
- });
-});
-</script> 
-
-<%= link_to 'Nytt ord', new_ord_path %>
-<BR><BR>
-<table>
-  <thead>
-    <tr>
-      <th>Engelska &nbsp; &nbsp; &nbsp;</th> 
-      <th>Svenska</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @ords.each do |ord| %>
-      <tr>
-        <td><%= ord.english %></td>
-        <td><p class="msg_head">...</p>
-        <div class="msg_body">
-        <%= ord.swedish %></td>
-        </div>
-        <td><%= link_to 'Mer', ord %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div id="ords">
+  <%= render @ords %>
+</div>

@@ -1,5 +1,15 @@
 Svedan::Application.routes.draw do
-  resources :ords
+  resources :ords do
+    member do
+      post 'attempt'
+    end
+
+    collection do
+      get :next_question
+    end
+  end
+
+  root 'ords#quiz'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
