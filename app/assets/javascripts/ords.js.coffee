@@ -25,6 +25,10 @@ $ ->
           $('.tagline').text(oldText)
           $('.tagline').animate 'top': '0px', opacity: 1
 
+  $('.speak').on 'click', (e)->
+    e.preventDefault();
+    word = $(this).data('word').toLowerCase()
+    $("#audioplayer").attr('src', 'http://translate.google.com/translate_tts?tl=sv&q=' + encodeURIComponent("#{word}"))
 
   $.fn.validatePresence = ->
     console.log(this)
