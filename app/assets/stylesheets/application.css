@@ -156,3 +156,25 @@ del {
 #audioplayer {
   display: none;
 }
+
+@media all and (max-width: 500px) {
+  .input-group {
+    width: 100%;
+  }
+
+  .submit-attempt {
+    display: none;
+  }
+
+  .navbar {
+    margin-bottom: 0px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .navbar-brand {
+    font-size: 30px !important;
+  }
+}
